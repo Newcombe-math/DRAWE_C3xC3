@@ -1,0 +1,20 @@
+# DRAWE_C3xC3
+Code used for verifying the proof of maxcr(C3xC3)=78, from https://arxiv.org/pdf/2005.06699.pdf
+
+This is specific purpose code, for manual verification of the arguments in the above paper. There are several parts which can be verified, and we recommend running each manually and observing the output yourself. The files work in Matlab 2021b, and require access to Matlab's graphisomorphism function. Additionally, a planar graph checker is required and we have used an implementation in MatlabBGL, available online and written by David Gleich. If you have no access to these, technically your own graphisomorphsim checker and planarity checker can be used instead, but we recommend against it as these are quite technical algorithms to write efficiently.
+
+For re-running full verification from scratch:
+
+-add current folder, drawe_files, and planarity checker folder to the Matlab path.
+
+-modify planar_given_crossings.m and planar_extended_given_crossings.m. The line for modification is commented and it just needs replaced by your own planarity checker which outputs 1 if the graph is planar and 0 otherwise.
+
+-open envelope_proof_2022.m. Read the comments and copy each section into the command line to observe the outputs. Essentially, we find several subgraphs, for which it is known that they have missed pairs. These are subgraph constraints. Then, we loop through all possible prescriptions and show that for each one, a subgraph exists which violates the previous constraints.
+
+-open GminusV_proof_2022.m and do the same as method as above. For the 10_missed_pairs and 11_missed_pairs_two_bowtie, there are now prescriptions which do not violate any of the previous constraints. For each of these prescriptions, we heuristically select subgraphs and run them with the drawe procedure. The procedure finds a subgraph for which it proves that the subgraph cannot be drawn to satisfy the current prescription. The heiristic step takes approximately one day to complete for the 10_missed_pairs and approx xxx for the 11_missed_pairs_two_bowtie. 
+
+Upon completion, the code has proved that G-v cannot be drawn with 9 or 10 missed pairs, or, 11 missed pairs where two of them come from a single bowtie. These are the required statements to complete the proof in the above paper.
+
+Alternatively, we provide the subgraphs found by the heuristic in xxx.m and xxx.m. These can be verified by loading one of these files and the edge list of G-v, and running subgraph_check_drawe(el,possible,possiblenum,violating_subgraphs)
+
+Finally, we comment that none of this code is optimised for efficiency. If you would like help or have comments, please contact alex.newcombe@flinders.edu.au or michael.haythorpe@flinders.edu.au
