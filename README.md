@@ -15,6 +15,6 @@ For re-running full verification from scratch:
 
 Upon completion, the code has proved that G-v cannot be drawn with 9 or 10 missed pairs, or, 11 missed pairs where two of them come from a single bowtie. These are the required statements to complete the proof in the above paper.
 
-Alternatively, we provide the subgraphs found by the heuristic in xxx.m and xxx.m. These can be verified by loading one of these files and the edge list of G-v, and running subgraph_check_drawe(el,possible,possiblenum,violating_subgraphs)
+Alternatively, we provide the subgraphs found by the heuristic in xxx.m and xxx.m. These can be verified by loading one of these files and the edge list (el) of G-v, and run subgraph_check_drawe(el,possible,possiblenum,impossible_subgraphs). This code takes the subgraph which cannot be drawn to satisfy a prescription and verifies this fact using drawe.
 
 Finally, we comment that none of this code is optimised for efficiency. If you would like help or have comments, please contact alex.newcombe@flinders.edu.au or michael.haythorpe@flinders.edu.au
