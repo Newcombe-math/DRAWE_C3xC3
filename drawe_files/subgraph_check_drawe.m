@@ -58,5 +58,6 @@ function [possible2,possiblenum2] = subgraph_check_drawe(el,possible,possiblenum
             pause
         end
     end
+    fprintf(['verification completed successfully (all 0 outputs from drawe).\n']);
 
 end
