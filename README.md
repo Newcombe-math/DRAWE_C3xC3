@@ -7,11 +7,11 @@ For re-running full verification from scratch:
 
 -Add current folder, drawe_files, and planarity checker folder to the Matlab path.
 
--Modify planar_given_crossings.m and planar_extended_given_crossings.m. The line for modification is commented and it just needs replaced by your own planarity checker which outputs 1 if the graph is planar and 0 otherwise.
+-If MatlabBGL's is_planar function is not being used, then modify planar_given_crossings.m and planar_extended_given_crossings.m. The line for modification is commented and it just needs replaced by your own planarity checker which outputs 1 if the graph is planar and 0 otherwise.
 
 -Open envelope_proof_2022.m. Read the comments and copy each section into the command line to observe the outputs. Essentially, we find several subgraphs, for which it is known that they have missed pairs. These are subgraph constraints. Then, we loop through all possible prescriptions which correspond to 14 crossings and show that for each one, a constraint is violated.
 
--Open GminusV_proof_2022.m and do the same method as above. For the 10_missed_pairs and 11_missed_pairs_2bowtie, there are now prescriptions which do not violate any of the previous constraints. For each of these prescriptions, we heuristically select subgraphs and run them with the drawe procedure. The procedure finds a subgraph for which it proves that the subgraph cannot be drawn to satisfy that prescription. If the current subgraph requires more than 1e8 planarity checks, then that subgraph is skipped. The heuristic step takes approximately one day to complete for the 10_missed_pairs and approx 3 days for the 11_missed_pairs_2bowtie. 
+-Open G-v_proofs_2022.m and do the same method as above. For the 10_missed_pairs and 11_missed_pairs_2bowtie, there are now prescriptions which do not violate any of the previous constraints. For each of these prescriptions, we heuristically select subgraphs and run them with the drawe procedure. The procedure finds a subgraph for which it proves that the subgraph cannot be drawn to satisfy that prescription. If the current subgraph requires more than 1e8 planarity checks, then that subgraph is skipped. The heuristic step takes approximately one day to complete for the 10_missed_pairs and approx 3 days for the 11_missed_pairs_2bowtie. 
 
 Upon successful completion, the code has proved that G-v cannot be drawn with 9 or 10 missed pairs, or, 11 missed pairs where two of them come from a single bowtie. These are the required statements to complete the proof in the paper.
 
