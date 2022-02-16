@@ -67,8 +67,7 @@ zdid=size(Did,1);
 [possible10,possiblenum10] = minusvertex_check_10_missed_pairs(el,A,Aid,zaid,C1,C2,C1id,C2id,cid,D,Did,zdid);
 %For each of the 74 sets, a subgraph is searched for which cannot be drawn
 %to satisfy the prescription.
-impossible_subgraphs10=[];
-[~,~,impossible_subgraphs10] = subgraph_heuristic(el,possible10,possiblenum10,impossible_subgraphs10);
+[~,~,impossible_subgraphs10] = subgraph_heuristic(el,possible10,possiblenum10,[]);
 
 
 %First, potential missed pairs of edges are found, which are 55 in total, after removing incident edges from consideration. 
@@ -79,6 +78,5 @@ impossible_subgraphs10=[];
 [possible11,possiblenum11] = minusvertex_check_11_missed_pairs_2bowtie(el,A,Aid,zaid,C1,C2,C1id,C2id,cid,D,Did,zdid);
 %For each of the 286 sets, a subgraph is searched for which cannot be drawn
 %to satisfy the prescription.
-impossible_subgraphs11=[];
-[~,~,impossible_subgraphs11] = subgraph_heuristic(el,possible11,possiblenum11,impossible_subgraphs11);
+[~,~,impossible_subgraphs11] = subgraph_heuristic(el,possible11,possiblenum11,[]);
 
