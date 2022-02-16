@@ -1,4 +1,4 @@
-function [possible,possiblenum] = minusvertex_check_10_missed_pairs(el,A,Aid,zaid,C1,C2,C1id,C2id,cid,Spairs,STpairs,Tpairs,S2pairs,ST2pairs,T2pairs,D,Did,zdid)
+function [possible,possiblenum] = minusvertex_check_10_missed_pairs(el,A,Aid,zaid,C1,C2,C1id,C2id,cid,D,Did,zdid)
 z=combntns(1:14,2);
 zn=size(z,1);
 cnt=0;
