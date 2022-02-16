@@ -29,6 +29,7 @@ el2=[1 2;1 4;1 5;2 3;2 6;3 4;3 6;4 5];
 possible=[];
 possible{1}=[2,4];
 possiblenum=1;
+impossible_subgraphs=[];
 [possible2,possiblenum2,impossible_subgraphs] = subgraph_heuristic(el,possible,possiblenum,impossible_subgraphs);
 [A2, A2id] = find_all_subgraphs_isomorphism(el,6,8,el2);
 za2id=size(Aid,1);
