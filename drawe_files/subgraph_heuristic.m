@@ -5,7 +5,7 @@ function [possible2,possiblenum2,impossible_subgraphs] = subgraph_heuristic(el,p
     Gclab=[];
     isomcnt=0;
     for n=1:possiblenum
-        for v=4:-1:7
+        for v=4:1:7
              for e=3:v*(v-1)/2
                 [G2, ~] = find_all_subgraphs(el,v,e);
                 fprintf(['subgraphs:  ',num2str(v),'    ',num2str(e),'    ',num2str(size(G2,1)),'\n']);
